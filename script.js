@@ -8,10 +8,19 @@ $(document).ready(function() {
 
     for (let i = 0; i < timeslots.length; i++) {
         var slot = $("<div>");
-        slot.addClass("row time-block hour description textarea");
+        var description = $('<textarea>');
+        var saveInfo = $('<button>');
+
+        slot.addClass("row time-block hour");
+        description.addClass('textarea');
+        saveInfo.addClass('saveBtn');
+        
         slot.attr('data-number', timeslots[i]);
         slot.text(timeslots[i]);
         $('.container').append(slot);
+        
+
+
     }
 
 
