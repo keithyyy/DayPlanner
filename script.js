@@ -24,12 +24,9 @@ $(document).ready(function() {
         $('.container').append(slot);
         $(saveInfo).append(saveIcon);         
         $(slot).append(hour, description, saveInfo);
-        
-
-
+    
 
     }
-
 
 
 
