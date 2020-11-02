@@ -8,17 +8,24 @@ $(document).ready(function() {
 
     for (let i = 0; i < timeslots.length; i++) {
         var slot = $("<div>");
+        var hour = $("<div>");
         var description = $('<textarea>');
         var saveInfo = $('<button>');
+        var saveIcon = $('<span>');
 
-        slot.addClass("row time-block hour");
-        description.addClass('textarea');
+        slot.addClass("row time-block");
+        hour.addClass("hour");
+        description.addClass('description');
         saveInfo.addClass('saveBtn');
+        saveIcon.addClass("far fa-save");
         
         slot.attr('data-number', timeslots[i]);
-        slot.text(timeslots[i]);
+        hour.text(timeslots[i]);
         $('.container').append(slot);
+        $(saveInfo).append(saveIcon);         
+        $(slot).append(hour, description, saveInfo);
         
+
 
 
     }
