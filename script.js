@@ -11,7 +11,7 @@ $(document).ready(function() {
     
 
 
-    var timeslots = ['9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm'];
+    var timeslots = ['9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'];
 
     for (let i = 0; i < timeslots.length; i++) {
         var slot = $("<div>");
@@ -57,15 +57,15 @@ $(document).ready(function() {
 
     }
 
-    var nineAmInput = document.querySelector('9 am');
-    var tenAmInput = document.querySelector('10 am');
-    var elevenAmInput = document.querySelector('11 am');
-    var twelvePmInput = document.querySelector('12 am');
-    var onePmInput = document.querySelector('1 pm');
-    var twoPmInput = document.querySelector('2 pm');
-    var threePmInput = document.querySelector('3 pm');
-    var fourPmInput = document.querySelector('4 pm');
-    var fivePmInput = document.querySelector('5 pm');
+    var nineAmInput = $('#9am');
+    var tenAmInput = $('#10am');
+    var elevenAmInput = $('#11am');
+    var twelvePmInput = $('#12am');
+    var onePmInput = $('#1pm');
+    var twoPmInput = $('#2pm');
+    var threePmInput = $('#3pm');
+    var fourPmInput = $('#4pm');
+    var fivePmInput = $('#5pm');
 
     console.log(nineAmInput);
 
@@ -75,25 +75,25 @@ $(document).ready(function() {
         event.preventDefault();
 
         var todaySchedule = {
-            nineAm = nineAmInput.value.trim();
-            tenAm = tenAmInput.value.trim();
-            elevenAm = elevenAmInput.value.trim();
-            twelvePm = twelvePmInput.value.trim();
-            onePm = onePmInput.value.trim();
-            twoPm = twoPmInput.value.trim();
-            threePm = threePmInput.value.trim();
-            fourPm = fourPmInput.value.trim();
-            fivePm = fivePmInput.value.trim();
-        }
+            nineAm: nineAmInput.val(),
+            tenAm: tenAmInput.val(),
+            elevenAm: elevenAmInput.val(),
+            twelvePm: twelvePmInput.val(),
+            onePm: onePmInput.val(),
+            twoPm: twoPmInput.val(),
+            threePm: threePmInput.val(),
+            fourPm: fourPmInput.val(),
+            fivePm: fivePmInput.val(),
+        };
 
         console.log(todaySchedule);
 
         localStorage.setItem('todaySchedule', JSON.stringify(todaySchedule));
 
-        var savedSchedule = JSON.parse(localStorage.getItem("todaySchedule")
+        var savedSchedule = JSON.parse(localStorage.getItem("todaySchedule"));
 
 
-    })
+    });
 
     
 
