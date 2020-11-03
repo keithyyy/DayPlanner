@@ -19,7 +19,7 @@ $(document).ready(function() {
         saveInfo.addClass('saveBtn');
         saveIcon.addClass("far fa-save");
         
-        slot.attr('data-number', timeslots[i]);
+        description.attr('data-index', timeslots[i]);
         hour.text(timeslots[i]);
         $('.container').append(slot);
         $(saveInfo).append(saveIcon);         
@@ -30,8 +30,16 @@ $(document).ready(function() {
 
     }
 
+    $(".saveBtn").on('click', function(event) {
+        event.preventDefault();
 
+        thingsPlanned = $('.description').val();
 
+        console.log(thingsPlanned)
+
+        localStorage.setItem("time", JSON.stringify(slot));
+
+    })
 
 
 
