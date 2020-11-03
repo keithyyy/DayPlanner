@@ -3,13 +3,6 @@ $(document).ready(function() {
     const dateDisplay = moment().format("dddd, MMMM Do YYYY");
     $('#currentDay').text(dateDisplay);
 
-    
-    
-    
-
-    
-    
-
 
     var timeslots = ['9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'];
 
@@ -46,16 +39,8 @@ $(document).ready(function() {
         $(saveInfo).append(saveIcon);         
         $(slot).append(hour, description, saveInfo);
 
-        
 
-        console.log(timeslots[i])
-
-
-        
-
-
-
-    }
+    };
 
     var nineAmInput = $('#9am');
     var tenAmInput = $('#10am');
@@ -67,7 +52,6 @@ $(document).ready(function() {
     var fourPmInput = $('#4pm');
     var fivePmInput = $('#5pm');
 
-    console.log(nineAmInput);
 
     
 
@@ -90,10 +74,25 @@ $(document).ready(function() {
 
         localStorage.setItem('todaySchedule', JSON.stringify(todaySchedule));
 
-        var savedSchedule = JSON.parse(localStorage.getItem("todaySchedule"));
+        
+
+        
 
 
     });
+
+    var savedSchedule = JSON.parse(localStorage.getItem("todaySchedule"));
+    console.log(savedSchedule.nineAm)
+    $(nineAmInput).text(savedSchedule.nineAm);
+    $(tenAmInput).text(savedSchedule.tenAm);
+    $(elevenAmInput).text(savedSchedule.elevenAm);
+    $(twelvePmInput).text(savedSchedule.twelvePm);
+    $(onePmInput).text(savedSchedule.onePm);
+    $(twoPmInput).text(savedSchedule.twoPm);
+    $(threePmInput).text(savedSchedule.threePm);
+    $(fourPmInput).text(savedSchedule.fourPm);
+    $(fivePmInput).text(savedSchedule.fivePm);
+    
 
     
 
