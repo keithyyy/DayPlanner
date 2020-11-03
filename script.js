@@ -4,7 +4,7 @@ $(document).ready(function() {
     $('#currentDay').text(dateDisplay);
 
 
-    var timeslots = ['9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'];
+    var timeslots = ['9am','10am','11am','12pm','1pm','2pm','3pm','4pm','6pm'];
 
     for (let i = 0; i < timeslots.length; i++) {
         var slot = $("<div>");
@@ -12,15 +12,17 @@ $(document).ready(function() {
         var description = $('<textarea>');
         var saveInfo = $('<button>');
         var saveIcon = $('<span>');
-        var currentHour = moment().format('h a');
+        var currentHour = moment().format('ha');
+        console.log(currentHour > timeslots[0])
+        
     
 
         if (currentHour === timeslots[i]) {
             description.toggleClass('present')
-        };
+        }
 
         if (currentHour > timeslots[i]) {
-            slot.toggleClass('past')
+            description.toggleClass('past')
         };
 
         if (currentHour < timeslots[i]) {
@@ -70,13 +72,7 @@ $(document).ready(function() {
             fivePm: fivePmInput.val(),
         };
 
-        console.log(todaySchedule);
-
         localStorage.setItem('todaySchedule', JSON.stringify(todaySchedule));
-
-        
-
-        
 
 
     });
