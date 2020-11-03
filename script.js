@@ -3,8 +3,15 @@ $(document).ready(function() {
     const dateDisplay = moment().format("dddd, MMMM Do YYYY");
     $('#currentDay').text(dateDisplay);
 
+    
+    
+    
 
-    var timeslots = ['9AM','10AM','11AM','12PM','1PM','2PM','3PM','4PM','5PM','6PM'];
+    
+    
+
+
+    var timeslots = ['9 am','10 am','11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','9 pm'];
 
     for (let i = 0; i < timeslots.length; i++) {
         var slot = $("<div>");
@@ -12,6 +19,21 @@ $(document).ready(function() {
         var description = $('<textarea>');
         var saveInfo = $('<button>');
         var saveIcon = $('<span>');
+        var currentHour = moment().format('h a');
+
+        console.log(currentHour)
+
+        if (currentHour === timeslots[i]) {
+            description.toggleClass('present')
+        };
+
+        if (currentHour > timeslots[i]) {
+            slot.toggleClass('past')
+        };
+
+        if (currentHour < timeslots[i]) {
+            description.toggleClass('future')
+        };
 
         slot.addClass("row time-block");
         hour.addClass("hour");
@@ -24,6 +46,12 @@ $(document).ready(function() {
         $('.container').append(slot);
         $(saveInfo).append(saveIcon);         
         $(slot).append(hour, description, saveInfo);
+
+        
+
+        console.log(timeslots[i])
+
+
         
 
 
@@ -40,6 +68,9 @@ $(document).ready(function() {
         localStorage.setItem("time", JSON.stringify(slot));
 
     })
+
+    
+
 
 
 
