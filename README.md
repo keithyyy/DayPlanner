@@ -16,4 +16,5 @@ Plan your day using the link below!
 **You can find a link to here!** - https://keithyyy.github.io/DayPlanner/
 
 **Here's screenshots of the planner in action:**
+![PlannerScreenshot](PlannerSS.png)
 
