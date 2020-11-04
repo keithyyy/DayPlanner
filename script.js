@@ -78,7 +78,6 @@ $(document).ready(function() {
     });
 
     var savedSchedule = JSON.parse(localStorage.getItem("todaySchedule"));
-    console.log(savedSchedule.nineAm)
     $(nineAmInput).text(savedSchedule.nineAm);
     $(tenAmInput).text(savedSchedule.tenAm);
     $(elevenAmInput).text(savedSchedule.elevenAm);
